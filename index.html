@@ -80,7 +80,7 @@
 
             </div>
             <div class="col-12 col-lg-8 col-xl-8 col-xxl-8">
-              <h4>Lista de estudiantes inscritos</h4>
+              <h4>Lista de estudiantes inscritos <button title="Limpiar" type="button" onclick="IniEstudiante();" class="btn btn-primary"><i class="fa-sharp fa-solid fa-repeat"></i></button></h4>
               <div class="table-responsive">
               <table class="table  table-striped table-hover table-sm">
                 <thead>
@@ -139,6 +139,16 @@
     -->
     <script>
       //localStorage.removeItem('miGato');
+      function IniEstudiante() {
+        miStorage = window.localStorage;
+        let aux = [];
+        try {
+          localStorage.setItem('estudiantes', JSON.stringify( aux)); 
+          GetEstudiantes();
+        } catch (error) {
+          console.log("Error: ",error);
+        }
+      }
       function DelEstudiante(matricula) {
         miStorage = window.localStorage;
         let aux2 = [];
