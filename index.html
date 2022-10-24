@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/73075a4ed5.js" crossorigin="anonymous"></script>
+    <title>Tarea</title>
+    <style>
+      .carousel-caption{
+        background-color: #00000042;
+      }
+    </style>
+    <script>
+     
+    </script>
+  </head>
+  <body>
+
+    <div class="container">
+        <br>
+        <div class="row">
+            
+            <br>
+            <div class="col-12 col-lg-4 col-xl-4 col-xxl-4">
+                
+              
+              <form>
+                <h4>Estudiante</h4>
+                
+                <div id="alerta" style="display: none;" class="alert alert-danger align-items-center" role="alert">
+                  <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Danger:"><use xlink:href="#exclamation-triangle-fill"/></svg>
+                  <div id="alertaMensaje">
+                    An example danger alert with an icon
+                  </div>
+                </div>
+
+                <div class="mb-3">
+                  <label for="matricula" class="form-label text-capitalize">matricula</label>
+                  <input placeholder="matricula" required type="text" class="form-control" id="matricula" aria-describedby="matriculaHelp">
+                  <div id="matriculaHelp" class="form-text"></div>
+                </div>
+                
+                <div class="mb-3">
+                  <label for="nombre" class="form-label text-capitalize">nombre</label>
+                  <input placeholder="nombre" required type="text" class="form-control" id="nombre" aria-describedby="nombreHelp">
+                  <div id="nombreHelp" class="form-text"></div>
+                </div>
+                
+                <div class="mb-3">
+                  <label for="apellido" class="form-label text-capitalize">apellido</label>
+                  <input placeholder="apellido" required type="text" class="form-control" id="apellido" aria-describedby="apellidoHelp">
+                  <div id="apellidoHelp" class="form-text"></div>
+                </div>
+                
+                <div class="mb-3">
+                  <label for="carrera" class="form-label text-capitalize">carrera</label>
+                  <input placeholder="carrera" required type="text" class="form-control" id="carrera" aria-describedby="carreraHelp">
+                  <div id="carreraHelp" class="form-text"></div>
+                </div>
+
+                <div class="mb-3">
+                  <label for="sexo" class="form-label text-capitalize">sexo</label>
+                  <input placeholder="sexo" required type="text" class="form-control" id="sexo" aria-describedby="sexoHelp">
+                  <div id="sexoHelp" class="form-text"></div>
+                </div>
+                <div class="mb-3">
+                  <label for="color" class="form-label text-capitalize">color favorito</label>
+                  <input placeholder="color" required type="text" class="form-control" id="color" aria-describedby="colorHelp">
+                  <div id="colorHelp" class="form-text"></div>
+                </div>
+
+                
+                <button type="button" onclick="SetEstudiante();" class="btn btn-primary"> <i class="fa fa-save" ></i> Guardar</button>
+              </form>
+              <br>
+
+            </div>
+            <div class="col-12 col-lg-8 col-xl-8 col-xxl-8">
+              <h4>Lista de estudiantes inscritos</h4>
+              <div class="table-responsive">
+              <table class="table  table-striped table-hover table-sm">
+                <thead>
+                  <tr>
+                    <th scope="col" class="text-capitalize">matricula</th>
+                    <th scope="col" class="text-capitalize">nombre</th>
+                    <th scope="col" class="text-capitalize">apellido</th>
+                    <th scope="col" class="text-capitalize">carrera</th>
+                    <th scope="col" class="text-capitalize">sexo</th>
+                    <th scope="col" class="text-capitalize">color</th>
+                    <th scope="col" class="text-capitalize">Acci&oacute;n</th>
+                  </tr>
+                </thead>
+                <tbody id="estudiantes">
+                  <tr>
+                    <th></th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td> <button class='btn btn-danger' onclick="DelEstudiante()" ><i class='fa fa-trash' ></i></button></td>
+                  </tr>
+
+                </tbody>
+              </table>
+            </div>
+
+            </div>
+
+
+            
+            <div class="col-12 p-0" >
+                <hr>
+                <div class="p-3 mb-2 bg-light text-dark">
+                    &copy; Todos los derechos reservados por José Bernardo Lorenzo almonte (1-09-5919)
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    
+        
+       
+
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    -->
+    <script>
+      //localStorage.removeItem('miGato');
+      function DelEstudiante(matricula) {
+        miStorage = window.localStorage;
+        let aux2 = [];
+        try {
+          let estudiantes = localStorage.getItem('estudiantes');
+          let aux  = JSON.parse(estudiantes);
+           aux2 = [];
+          aux.forEach(i=>{
+            if (i.matricula != matricula) {
+              aux2.push(i);
+            }
+          });
+
+          localStorage.setItem('estudiantes', JSON.stringify( aux2)); 
+          GetEstudiantes();
+        } catch (error) {
+          console.log("Error: ",error);
+        }
+      }
+      
+      function GetEstudiantes() {
+        try {
+         
+          miStorage = window.localStorage;
+          let estudiantes = localStorage.getItem('estudiantes');
+          var idEstudiantes = document.getElementById("estudiantes");
+          let aux = "";
+          JSON.parse(estudiantes).forEach(i => {
+            console.log(i);
+            aux += `<tr> <td>${i.matricula}</td><td>${i.nombre}</td><td>${i.apellido}</td><td>${i.carrera}</td><td>${i.sexo}</td><td>${i.color}</td><td> <button class='btn btn-danger' OnClick="DelEstudiante('${i.matricula}');" ><i class='fa fa-trash' ></i></button></td> </tr>`;
+          });
+          idEstudiantes.innerHTML =aux;
+
+          
+        } catch (error) {
+          console.log("Error",error);    
+        }
+
+      }
+      function SetEstudiante() {
+        
+        let error = document.getElementById("alerta");
+        let errorMensaje = document.getElementById("alertaMensaje");
+        error.style.display = "none";
+        errorMensaje.innerHTML="";
+
+        let matricula = document.getElementById("matricula");
+        let nombre  = document.getElementById("nombre");
+        let apellido  = document.getElementById("apellido");
+        let carrera  = document.getElementById("carrera");
+        let sexo  = document.getElementById("sexo");
+        let color  = document.getElementById("color");
+
+        if (matricula.value.length <= 0) {
+          error.style.display = "flex";
+          errorMensaje.innerHTML="Campo matricula esta vacio";
+          return; 
+        }else if (nombre.value.length <= 0) {
+          error.style.display = "flex";
+          errorMensaje.innerHTML="Campo nombre esta vacio";
+          return; 
+        }else if (apellido.value.length <= 0) {
+          error.style.display = "flex";
+          errorMensaje.innerHTML="Campo apellido esta vacio";
+          return; 
+        }else if (carrera.value.length <= 0) {
+          error.style.display = "flex";
+          errorMensaje.innerHTML="Campo carrera esta vacio";
+          return; 
+        }else if (sexo.value.length <= 0) {
+          error.style.display = "flex";
+          errorMensaje.innerHTML="Campo sexo esta vacio";
+          return; 
+        }else if (color.value.length <= 0) {
+          error.style.display = "flex";
+          errorMensaje.innerHTML="Campo color esta vacio";
+          return; 
+        }else{
+          error.style.display = "none";
+          errorMensaje.innerHTML="";
+          
+        }
+
+        var estudiante = {
+          matricula: matricula.value,
+          nombre : nombre.value,
+          apellido : apellido.value,
+          carrera : carrera.value,
+          sexo :sexo.value,
+          color : color.value
+        };
+
+        miStorage = window.localStorage;
+        let aux = [];
+        try {
+          let estudiantes = localStorage.getItem('estudiantes');
+          aux  = JSON.parse(estudiantes);
+          
+        } catch (error) {
+          console.log("Error: ",error);
+        }
+
+        aux.push(estudiante);
+        console.log(aux);
+        console.log(JSON.stringify( aux));
+        localStorage.setItem('estudiantes', JSON.stringify( aux)); 
+
+        matricula.value ="";
+        nombre.value ="";
+        apellido.value ="";
+        carrera.value ="";
+        sexo.value ="";
+        color.value ="";
+        GetEstudiantes();
+      }
+
+      //SetEstudiante();
+      GetEstudiantes();
+    </script>
+  </body>
+</html>
+
+
+
+
+
